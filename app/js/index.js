@@ -26,12 +26,12 @@ const arrayTwo = ['pedro', 'luis', 'jose'];
 
 const concatArray = [...arrayOne, ...arrayTwo];
 
-concatArray.forEach(function(name) {
+concatArray.forEach(function (name) {
     log(name);
 });
 
-const addNumbers = function(x,y,z){
-    return x + y +z;
+const addNumbers = function (x, y, z) {
+    return x + y + z;
 }
 
 const numbers = [1, 2, 3];
@@ -51,7 +51,49 @@ const name = {
     lastName: 'Jones'
 };
 
-const person = {...address, ...name};
+const person = { ...address, ...name };
 
 log('Spread operator with objects: ');
 log(JSON.stringify(person, null, 2));
+
+const hello = () => {
+    const es6 = 'ES6';
+    return `Hello ${es6}`;
+};
+
+const powers = [1, 2, 3, 4, 5].map((number, index) => Math.pow(number, index));
+
+
+const milesToKm = miles => miles * 1.60934;
+
+
+const man = {
+    name: 'Alex',
+    cars: ['Toyota', 'Honda'],
+    toString: function () {
+        log(`${this.name} has ${this.cars}`)
+    }
+}
+
+man.toString();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
