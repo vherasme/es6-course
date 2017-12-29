@@ -6,6 +6,7 @@ import { log, logTitle } from 'logger';
 /* your imports */
 import { add, subtract, multiply, division } from './modules/Math'; /* import * from './modules/Math'; */
 import Animal from './modules/Animal';
+import Dog from './modules/dog';
 
 logTitle('Title');
 /* coding examples */
@@ -15,9 +16,8 @@ log("Divide function: " + division(9, 8));
 
 var animal = new Animal('Chip', 10);
 
-log(animal.getName() + " is " + animal.getAge() + " years old");
 log("\n Template literals: ");
-log(`${animal.getName()} is ${animal.getAge()} years old`);
+animal.logAge();
 
 log("Spread operator arrays: ");
 
@@ -63,9 +63,7 @@ const hello = () => {
 
 const powers = [1, 2, 3, 4, 5].map((number, index) => Math.pow(number, index));
 
-
 const milesToKm = miles => miles * 1.60934;
-
 
 const man = {
     name: 'Alex',
@@ -91,3 +89,9 @@ const mariam = names[1];
 const joe = names[2];
 
 log(`${anna} ${mariam} ${joe}`);
+
+
+const bobby = new Dog('bobby', 3, 'Golden');
+
+bobby.logBreed();
+bobby.logAgeFromDog();
