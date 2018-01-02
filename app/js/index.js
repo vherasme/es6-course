@@ -98,9 +98,9 @@ bobby.logAgeFromDog();
 
 log('\n Promises: ');
 
-const promise = new Promise((resolve, reject) => {
+const firstNamePromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Data back from the server");
+        resolve(["Juan", "Pedro", "Lucas"]);
     }, 3000);
 
     setTimeout(() => {
@@ -109,8 +109,28 @@ const promise = new Promise((resolve, reject) => {
 
 });
 
-promise.then(response => {
-    log(response);
-}).catch(error => {
+const lastNamePromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(["Perez", "Rojas", "Luna"]);
+    }, 3000);
+
+    setTimeout(() => {
+        reject("No data back from the server, there was an error");
+    }, 5000);
+
+});
+
+Promise.all([firstNamePromise, lastNamePromise]).then(data => {
+    const [names, surnames] = data;
+    for (let index = 0; index < names.length; index++) {
+        const name = names[index];
+        const surname = surnames[index];
+        log(`${name} ${surname}`)
+    }
+}).catch(error =>{
     log(error);
 });
+
+const getRandomUsers = n => {
+    const fetchRandomUsers = fetch();
+}
