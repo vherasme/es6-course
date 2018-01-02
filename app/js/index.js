@@ -95,3 +95,22 @@ const bobby = new Dog('bobby', 3, 'Golden');
 
 bobby.logBreed();
 bobby.logAgeFromDog();
+
+log('\n Promises: ');
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Data back from the server");
+    }, 3000);
+
+    setTimeout(() => {
+        reject("No data back from the server, there was an error");
+    }, 4000);
+
+});
+
+promise.then(response => {
+    log(response);
+}).catch(error => {
+    log(error);
+});
